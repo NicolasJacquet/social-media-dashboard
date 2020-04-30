@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+.app {
+    min-height: 100vh;
+    transition: background $theme-transition;
+
+    &.dark {
+        background: $dark-main-background-color;
+    }
+
+    &.light {
+        background: $light-main-background-color;
+    }
+}
