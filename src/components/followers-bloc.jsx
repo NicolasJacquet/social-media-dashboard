@@ -3,11 +3,10 @@ import classnames from "classnames";
 import BaseBloc from "./base-bloc";
 import StatEvolution from "./stat-evolution";
 import getIcon from "./../utils/get-icon";
+import FormattedNumber from "./formatted-number";
 import css from "./../assets/styles/followers-bloc.module.scss";
 
 const FollowersBloc = ({ handle, type, number, gain, lost, link }) => {
-    const formattedNumber = new Intl.NumberFormat().format(number);
-
     return (
         <BaseBloc className={classnames(css.container, css[type])} link={link}>
             <div className={css.handleContainer}>
@@ -15,7 +14,9 @@ const FollowersBloc = ({ handle, type, number, gain, lost, link }) => {
                 <span className={css.handle}>{handle}</span>
             </div>
             <p className={css.numberContainer}>
-                <span className={css.number}>{formattedNumber}</span>
+                <span className={css.number}>
+                    <FormattedNumber number={number} />
+                </span>
                 <span className={css.numberLabel}>
                     {type === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}
                 </span>

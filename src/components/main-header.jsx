@@ -5,13 +5,17 @@ import ContentContainer from "./content-container";
 import ColorSwitcher from "./color-switcher";
 import css from "./../assets/styles/main-header.module.scss";
 
+const locale = (navigator && navigator.language) || "en-US";
+
 const MainHeader = () => {
     const { theme: isLight, followersData } = useSelector((state) => state);
     const totalFollowers = followersData.reduce(
         (accumulator, currentValue) => accumulator + currentValue.number,
         0
     );
-    const formattedNumber = new Intl.NumberFormat().format(totalFollowers);
+    const formattedNumber = new Intl.NumberFormat(locale).format(
+        totalFollowers
+    );
 
     return (
         <header
