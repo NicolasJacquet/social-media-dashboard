@@ -1,0 +1,70 @@
+@import "variables";
+
+.mainHeader {
+    padding: 40px 0 50px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 160%;
+        content: "";
+        z-index: 0;
+        transition: background $theme-transition;
+    }
+}
+
+.contentContainer {
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 600px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.titleContainer {
+    @media (max-width: 599px) {
+        padding-bottom: 26px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $sep-line-color;
+    }
+}
+
+.title {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    transition: color $theme-transition;
+}
+
+.totalFollowers {
+    color: $text-color;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.dark {
+    &::before {
+        background: $dark-second-background-color;
+    }
+
+    .title {
+        color: $dark-color-main-text-color;
+    }
+}
+
+.light {
+    &::before {
+        background: $light-second-background-color;
+    }
+
+    .title {
+        color: $light-color-main-text-color;
+    }
+}

@@ -1,0 +1,15 @@
+.stat {
+    color: #dc414c;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    &.positive {
+        color: #1eb589;
+    }
+}
+
+.icon {
+    margin-right: 4px;
+}

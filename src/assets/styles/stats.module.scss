@@ -1,0 +1,23 @@
+@import "variables";
+
+.mainContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.sectionTitle {
+    margin: 0 0 20px;
+    font-size: 1.4rem;
+    font-weight: 900;
+
+    &.dark {
+        color: $dark-color-main-text-color;
+    }
+
+    &.light {
+        color: $light-color-main-text-color;
+    }
+}

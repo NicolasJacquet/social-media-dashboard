@@ -1,7 +1,9 @@
 import React from "react";
 import classnames from "classnames";
 import { useSelector } from "react-redux";
-import ColorSwitcher from "./color-switcher";
+import MainHeader from "./main-header";
+import Followers from "./followers";
+import Stats from "./stats";
 import css from "./../assets/styles/app.module.scss";
 
 const App = () => {
@@ -14,8 +16,9 @@ const App = () => {
                 [css.light]: isLight,
             })}
         >
-            Coding challenge
-            <ColorSwitcher />
+            <MainHeader />
+            <Followers />
+            <Stats />
         </div>
     );
 };

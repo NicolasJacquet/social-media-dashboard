@@ -1,0 +1,56 @@
+@import "variables";
+
+.container {
+    position: relative;
+    text-align: center;
+    transition: background $theme-transition, color $theme-transition,
+        transform $theme-transition;
+    padding: 30px 18px 26px;
+    overflow: hidden;
+    border-radius: $bloc-border-radius;
+    width: 100%;
+    margin-bottom: 22px;
+
+    @media (min-width: 480px) {
+        width: 48%;
+    }
+
+    @media (min-width: 768px) {
+        width: 23%;
+    }
+
+    @media (min-width: 992px) {
+        padding: 30px 24px 26px;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    &.dark {
+        background-color: $dark-bloc-background-color;
+        color: $dark-color-main-text-color;
+
+        &:hover {
+            background: $dark-bloc-hover-background-color;
+        }
+    }
+
+    &.light {
+        background-color: $light-bloc-background-color;
+        color: $light-color-main-text-color;
+
+        &:hover {
+            background: $light-bloc-hover-background-color;
+        }
+    }
+}
+
+.link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-indent: -90000px;
+}
