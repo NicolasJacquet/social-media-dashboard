@@ -9,7 +9,7 @@ const Followers = () => {
 
     return (
         <ContentContainer>
-            <section className={css.mainContainer}>
+            <div className={css.mainContainer}>
                 {followersData.map((data) => {
                     return (
                         <FollowersBloc
@@ -23,7 +23,7 @@ const Followers = () => {
                         />
                     );
                 })}
-            </section>
+            </div>
         </ContentContainer>
     );
 };

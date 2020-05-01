@@ -6,7 +6,7 @@ import css from "./../assets/styles/base-bloc.module.scss";
 const BaseBloc = ({ children, className, link }) => {
     const isLight = useSelector((state) => state.theme);
     return (
-        <article
+        <div
             className={classnames(
                 css.container,
                 {
@@ -25,7 +25,7 @@ const BaseBloc = ({ children, className, link }) => {
             >
                 Open the account
             </a>
-        </article>
+        </div>
     );
 };
 

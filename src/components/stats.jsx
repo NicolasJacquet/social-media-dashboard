@@ -18,7 +18,7 @@ const Stats = () => {
             >
                 Overview - Today
             </h2>
-            <section className={css.mainContainer}>
+            <div className={css.mainContainer}>
                 {stats.map((data) => {
                     return (
                         <StatsBloc
@@ -31,7 +31,7 @@ const Stats = () => {
                         />
                     );
                 })}
-            </section>
+            </div>
         </ContentContainer>
     );
 };
