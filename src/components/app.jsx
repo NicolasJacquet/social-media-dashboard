@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import MainHeader from "./main-header";
 import Followers from "./followers";
 import Stats from "./stats";
+import Footer from "./footer";
 import css from "./../assets/styles/app.module.scss";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <MainHeader />
             <Followers />
             <Stats />
+            <Footer />
         </div>
     );
 };
