@@ -15,6 +15,7 @@ $bubble-border-size: ($switcher-base-size / 100) * 20;
 }
 
 .label {
+    user-select: none;
     position: relative;
     width: $switcher-base-size * 2;
     height: $switcher-base-size;

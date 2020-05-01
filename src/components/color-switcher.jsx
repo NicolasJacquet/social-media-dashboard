@@ -1,12 +1,12 @@
 import React from "react";
 import classnames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { switchThemeColor } from "./../redux";
+import { switchThemeColor } from "./../redux/colorThemeReducer";
 import css from "./../assets/styles/color-switcher.module.scss";
 
 const ColorSwitcher = () => {
     const dispatch = useDispatch();
-    const isLight = useSelector((state) => state);
+    const isLight = useSelector((state) => state.theme);
 
     const onSwitch = () => {
         dispatch(switchThemeColor());

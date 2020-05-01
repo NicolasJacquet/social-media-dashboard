@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import css from "./../assets/styles/base-bloc.module.scss";
 
 const BaseBloc = ({ children, className, link }) => {
-    const isLight = useSelector((state) => state);
+    const isLight = useSelector((state) => state.theme);
     return (
         <article
             className={classnames(

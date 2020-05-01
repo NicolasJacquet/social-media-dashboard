@@ -2,27 +2,27 @@ import React from "react";
 import classnames from "classnames";
 import BaseBloc from "./base-bloc";
 import StatEvolution from "./stat-evolution";
-import iconInstagram from "./../assets/images/icon-instagram.svg";
+import getIcon from "./../utils/get-icon";
 import css from "./../assets/styles/followers-bloc.module.scss";
 
-const FollowersBloc = () => {
-    const formattedNumber = new Intl.NumberFormat().format(111111);
+const FollowersBloc = ({ handle, type, number, gain, lost, link }) => {
+    const formattedNumber = new Intl.NumberFormat().format(number);
 
     return (
-        <BaseBloc
-            className={classnames(css.container, css.instagram)}
-            link='https://www.google.com'
-        >
+        <BaseBloc className={classnames(css.container, css[type])} link={link}>
             <div className={css.handleContainer}>
-                <img src={iconInstagram} alt='Instagram' />
-                <span className={css.handle}>@handle</span>
+                <img src={getIcon(type)} alt={type} />
+                <span className={css.handle}>{handle}</span>
             </div>
             <p className={css.numberContainer}>
                 <span className={css.number}>{formattedNumber}</span>
-                <span className={css.numberLabel}>FOLLOWERS</span>
+                <span className={css.numberLabel}>
+                    {type === "youtube" ? "SUBSCRIBERS" : "FOLLOWERS"}
+                </span>
             </p>
             <div className={css.statContainer}>
-                <StatEvolution number={12} />
+                {gain && <StatEvolution number={gain} isPositive />}
+                {lost && <StatEvolution number={lost} />}
             </div>
         </BaseBloc>
     );

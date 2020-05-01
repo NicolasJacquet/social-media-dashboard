@@ -7,7 +7,7 @@ import Stats from "./stats";
 import css from "./../assets/styles/app.module.scss";
 
 const App = () => {
-    const isLight = useSelector((state) => state);
+    const isLight = useSelector((state) => state.theme);
 
     return (
         <div

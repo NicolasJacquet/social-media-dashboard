@@ -6,7 +6,7 @@ import ContentContainer from "./content-container";
 import css from "./../assets/styles/stats.module.scss";
 
 const Stats = () => {
-    const isLight = useSelector((state) => state);
+    const { theme: isLight, stats } = useSelector((state) => state);
 
     return (
         <ContentContainer>
@@ -19,14 +19,18 @@ const Stats = () => {
                 Overview - Today
             </h2>
             <section className={css.mainContainer}>
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
-                <StatsBloc />
+                {stats.map((data) => {
+                    return (
+                        <StatsBloc
+                            key={data.id}
+                            label={data.label}
+                            type={data.type}
+                            number={data.number}
+                            lost={data.lost ? data.lost : null}
+                            gain={data.gain ? data.gain : null}
+                        />
+                    );
+                })}
             </section>
         </ContentContainer>
     );

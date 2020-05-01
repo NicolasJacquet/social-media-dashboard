@@ -1,5 +1,3 @@
-import { createStore } from "redux";
-
 export const switchThemeColor = () => {
     return {
         type: "SWITCH_THEME_COLOR",
@@ -15,7 +13,4 @@ const colorThemeReducer = (themeColorIsLight = false, action) => {
     }
 };
 
-export default createStore(
-    colorThemeReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+export default colorThemeReducer;
